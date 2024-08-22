@@ -36,8 +36,9 @@ if "messages" not in st.session_state:
     # 대화기록을 저장하기 위한 용도로 생성한다.
     st.session_state["messages"] = []
 
+
 # 탭을 생성
-main_tab1, main_tab2 = st.tabs(["이미지", "대화내용"])
+main_tab1, main_tab2 = st.tabs(["이미지", "대화기록"])
 
 
 # 사이드바 생성
@@ -46,8 +47,24 @@ with st.sidebar:
     clear_btn = st.button("대화 초기화")
 
     # 이미지 업로드
-    uploaded_file = st.file_uploader("이미지 업로드", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("이미지 업로드", type=["jpg", "jpeg", "png"], accept_multiple_files=False)
+    #st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, *, type="secondary", disabled=False, use_container_width=False)
+    process = st.button("Process")
+    
+    # Process 버튼 눌렀을 때 이벤트 정의
+    if process:
+        # if not openai_api_key:
+        #     st.info("Please add your OpenAI API key to continue.")
+        #     st.stop()
+        # files_text = get_text(uploaded_files) #input_txt_embedding = get_txt_embedding(input_txt)
+        # text_chunks = get_text_chunks(files_text) #input_img_embedding = get_img_embedding(input_img)
+        # vetorestore = get_vectorstore(text_chunks) #get_search_results()
 
+        # st.session_state.conversation = get_conversation_chain(vetorestore,openai_api_key) 
+
+        # st.session_state.processComplete = True
+        pass 
+        
     # 모델 선택 메뉴
     selected_model = st.selectbox("LLM 선택", ["gpt-4o", "gpt-4o-mini"], index=0)
     #selected_model = "gpt-4o"
