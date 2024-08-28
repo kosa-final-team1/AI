@@ -52,7 +52,7 @@ with st.sidebar:
     clear_btn = st.button("reset")
     
     # 이미지 업로드
-    uploaded_file = st.file_uploader("이미지 업로드", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("👚 이미지 업로드", type=["jpg", "jpeg", "png"])
     
     # 모델 선택 메뉴 -> 다른 거 선택으로 활용
     #selected_model = st.selectbox("LLM 선택", ["gpt-4o", "gpt-4o-mini"], index=0)
