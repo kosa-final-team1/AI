@@ -412,3 +412,9 @@ venv/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+# add
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
